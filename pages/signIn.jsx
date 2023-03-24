@@ -10,6 +10,7 @@ const logIn = (email, password) => {
 
 const LoginPage = () => {
   const methods = useForm({ mode: "onBlur" });
+  const router = useRouter();
 
   const {
     register,
@@ -19,7 +20,6 @@ const LoginPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const router = useRouter();
       await logIn(data.email, data.password);
       router.push("/home");
     } catch (error) {

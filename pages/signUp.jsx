@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from 'next/router';
 import { FormProvider, useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase/clientApp'
 
 const signUp = (email, password) => {
   return createUserWithEmailAndPassword(auth, email, password);
@@ -9,6 +10,7 @@ const signUp = (email, password) => {
 
 const SignupPage = () => {
   const methods = useForm({ mode: "onBlur" });
+  const router = useRouter();
 
   const {
     register,
@@ -19,7 +21,6 @@ const SignupPage = () => {
   const onSubmit = async (data) => {
     try {
         await signUp(data.email, data.password);
-        const router = useRouter();
         router.push("/home");
       } catch (error) {
         console.log(error.message);
