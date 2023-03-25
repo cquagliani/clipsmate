@@ -22,14 +22,14 @@ const SignupPage = () => {
   };
 
   return (
-    <div class="flex justify-center items-center h-screen w-screen bg-blue-100">
+    <div class="flex flex-col justify-center items-center h-screen w-screen bg-blue-100 font-mono">
       <div className="sign-up-form container mx-auto w-96 mt-12 rounded-3xl border-2 border-gray-400 bg-white">
         <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">Sign Up</h2>
         <FormProvider {...methods}>
           <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-8">
               <div className="flex items-center justify-between">
-                <label htmlFor="" className="block mb-3 font-sans text-blue-900">
+                <label htmlFor="" className="block mb-3 text-blue-900">
                   Email
                 </label>
               </div>
@@ -43,7 +43,7 @@ const SignupPage = () => {
             </div>
             <div className="mt-8">
               <div className="flex items-center justify-between">
-                <label htmlFor="" className="block mb-3 font-sans text-blue-900">
+                <label htmlFor="" className="block mb-3 text-blue-900">
                   Password
                 </label>
               </div>
@@ -57,7 +57,7 @@ const SignupPage = () => {
             </div>
             <div className="mt-8">
               <div className="flex items-center justify-between">
-                <label htmlFor="" className="block mb-3 font-sans text-blue-900">
+                <label htmlFor="" className="block mb-3 text-blue-900">
                   Confirm Password
                 </label>
               </div>
@@ -83,6 +83,10 @@ const SignupPage = () => {
             </div>
           </form>
         </FormProvider>
+      </div>
+
+      <div class="mt-8">
+        <p class="font-lighter font-gray-200">Already have an account? <b><a href="/signIn">Login</a></b></p>
       </div>
     </div>
   );
