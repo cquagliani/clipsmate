@@ -22,12 +22,10 @@ const Home = () => {
   };
 
     return (
-      <div className="flex flex-col justify-center items-center py-2 container mx-auto">
-        <div className="text-gray-600 px-12 py-24 mt-24 overflow-y-hidden mx-auto">
-          <h2 className="text-2xl font-semibold">Successful login!</h2>
-        </div>
-        <div>
-          <a onClick={handleLogout} className="text-blue-800 hover:text-blue-900 transition cursor-pointer">Logout</a>
+      <div class="flex justify-center items-center h-screen w-screen bg-blue-100">
+        <div className="flex flex-col justify-start items-center text-gray-600 px-12 py-24 mt-24 container mx-auto w-96 rounded-3xl border-2 border-gray-400 bg-white gap-8">
+            <h2 className="text-2xl font-semibold">Successful login!</h2>
+            <a onClick={handleLogout} className="transition cursor-pointer bg-blue-300 rounded-3xl px-10 py-6 font-bold text-gray-800 border border-solid border-black">Logout</a>
         </div>
       </div>
     );
