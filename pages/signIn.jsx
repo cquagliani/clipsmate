@@ -1,12 +1,8 @@
 import React from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { FormProvider, useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../firebase/clientApp'
-
-const logIn = (email, password) => {
-  return signInWithEmailAndPassword(auth, email, password);
-};
+import { auth } from "../firebase/clientApp";
 
 const LoginPage = () => {
   const methods = useForm({ mode: "onBlur" });
@@ -17,6 +13,10 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors },
   } = methods;
+
+  const logIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const onSubmit = async (data) => {
     try {
