@@ -16,7 +16,7 @@ function DashboardHeader() {
     const handleLogout = async () => {
       try {
         await logOut();
-        router.push("/signIn");
+        router.push("/login");
       } catch (error) {
         console.log(error.message);
       }
@@ -31,7 +31,7 @@ function DashboardHeader() {
                 <Link href="/pricing">Pricing</Link>
             </div>
             <div class="flex items-center gap-8">
-                <button class="border border-gray-600 border-solid bg-blue-300 rounded-3xl py-6 px-6 font-bold" onClick={handleLogout}>Logout</button>
+                <button class="border border-gray-600 border-solid bg-blue-300 hover:bg-blue-200 rounded-3xl py-6 px-6 font-bold" onClick={handleLogout}>Logout</button>
             </div>
         </div>
 
