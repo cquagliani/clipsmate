@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from 'next/router';
 import { FormProvider, useForm } from "react-hook-form";
 
-const SignupPage = () => {
+const signup = () => {
   const methods = useForm({ mode: "onBlur" });
   const router = useRouter();
 
@@ -23,7 +23,7 @@ const SignupPage = () => {
 
   return (
     <div class="flex flex-col justify-center items-center h-screen w-screen bg-blue-100 font-mono">
-      <div className="sign-up-form container mx-auto w-96 mt-12 rounded-3xl border-2 border-gray-400 bg-white">
+      <div className="sign-up-form container mx-auto -mt-20 w-96 rounded-3xl border-2 border-gray-400 bg-white">
         <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">Sign Up</h2>
         <FormProvider {...methods}>
           <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
@@ -85,11 +85,11 @@ const SignupPage = () => {
         </FormProvider>
       </div>
 
-      <div class="mt-8">
-        <p class="font-lighter font-gray-200">Already have an account? <b><a href="/signIn">Login</a></b></p>
+      <div className="mt-6">
+        <p className="font-light text-[14px] text-gray-600">Already have an account? <a class="font-bold" href="/login">Login</a></p>
       </div>
     </div>
   );
 };
 
-export default SignupPage;
+export default signup;

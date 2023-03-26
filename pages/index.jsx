@@ -1,9 +1,9 @@
-import SignupPage from './signUp';
+import Home from './home';
 
 export default function Index() {
   return (
     <div>
-      <SignupPage />
+      <Home />
     </div>
   )
 }

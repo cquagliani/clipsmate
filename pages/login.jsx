@@ -21,7 +21,7 @@ const LoginPage = () => {
   const onSubmit = async (data) => {
     try {
       await logIn(data.email, data.password);
-      router.push("/home");
+      router.push("/dashboard");
     } catch (error) {
       console.log(error.message);
     }
@@ -29,7 +29,7 @@ const LoginPage = () => {
 
   return (
     <div class="flex flex-col justify-center items-center h-screen w-screen bg-blue-100 font-mono">
-      <div className="sign-up-form container mx-auto w-96 mt-12 rounded-3xl border-2 border-gray-400 bg-white">
+      <div className="sign-up-form container mx-auto -mt-20 w-96 rounded-3xl border-2 border-gray-400 bg-white">
         <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">Welcome back!</h2>
         <FormProvider {...methods}>
           <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
@@ -73,8 +73,8 @@ const LoginPage = () => {
           </form>
         </FormProvider>
       </div>
-      <div class="mt-6">
-        <p class="font-light text-[14px] text-gray-600 ">Don't have an account? <a class="font-bold" href="/signUp">Sign Up</a></p>
+      <div className="mt-6">
+        <p className="font-light text-[14px] text-gray-600 ">Don't have an account? <a class="font-bold" href="/signup">Sign Up</a></p>
       </div>
     </div>
   );
