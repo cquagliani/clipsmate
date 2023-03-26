@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore'
 import { DataSnapshot, getDatabase, onChildAdded, onChildRemoved, ref, set } from 'firebase/database';
 
 const clientCredentials = {
@@ -15,7 +16,7 @@ const clientCredentials = {
 
 const app = initializeApp(clientCredentials);
 export const auth = getAuth();
-const db = getDatabase(app);
+export const db = getFirestore(app);
 
 
 
