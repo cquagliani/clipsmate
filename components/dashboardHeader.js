@@ -25,7 +25,7 @@ function DashboardHeader() {
     return (
         <div class="flex justify-between items-center py-12 px-10 font-mono">
             <h1 class="font-bold text-[34px]"><a href="/">CLIPSMATE</a></h1>
-            <div class="flex items-center gap-16">
+            <div class="items-center gap-16 hidden px-8 md:flex">
                 <Link href="/">Home</Link>
                 <Link href="/features">Features</Link>
                 <Link href="/pricing">Pricing</Link>
