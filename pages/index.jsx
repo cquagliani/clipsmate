@@ -1,9 +1,11 @@
 import Home from './home';
 
-export default function Index() {
+const Index = () => {
   return (
     <div>
       <Home />
     </div>
   )
 }
+
+export default Index;

@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/clientApp";
 import LoginHeader from '@component/components/loginHeader';
 
-const LoginPage = () => {
+const Login = () => {
   const methods = useForm({ mode: "onBlur" });
   const router = useRouter();
 
@@ -84,4 +84,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
