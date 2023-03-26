@@ -1,7 +1,6 @@
 import DashboardHeader from "@component/components/dashboardHeader";
 import ListItem from "@component/components/listItem";
 import GhostListItem from "@component/components/ghostListItem";
-import AddButton from "@component/components/addButton";
 
 const Dashboard = () => {
     return (
@@ -11,7 +10,6 @@ const Dashboard = () => {
                 <div className="flex flex-col justify-start">
                     <div className="flex flex-row justify-between px-8">
                         <h1 className="font-bold text-3xl align-left">Dashboard</h1>
-                        <AddButton />
                     </div>
                     <div className="flex justify-stretch items-center">
                         <div className="flex flex-col gap-4 border border-solid border-black rounded-3xl p-10 w-full h-full mt-12 bg-gray-100 bg-opacity-60 min-w-fit">
