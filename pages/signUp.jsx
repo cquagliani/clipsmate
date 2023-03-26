@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { FormProvider, useForm } from "react-hook-form";
 import SignUpHeader from "@component/components/signupHeader";
 
-const signup = () => {
+const Signup = () => {
   const methods = useForm({ mode: "onBlur" });
   const router = useRouter();
 
@@ -96,4 +96,4 @@ const signup = () => {
   );
 };
 
-export default signup;
+export default Signup;
