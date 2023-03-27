@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ListItem from './listItem';
-import GhostListItem from "./ghostListItem";
 import {  query, collection, onSnapshot, updateDoc, getDocs, doc, addDoc, deleteDoc, } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
 import NewListItem from './newListItem';
@@ -16,16 +15,15 @@ function List() {
             setList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
         }
         getList();
-      }, []);
+    }, []);
 
     return (
         <div className="flex items-center">
             <ul id="itemsList" className="flex flex-col gap-4 border border-solid border-black rounded-3xl p-10 w-full h-full mt-12 bg-gray-100 bg-opacity-60 min-w-fit">
                 {list.map((item) => (
-                    <ListItem listLabel={item.label} listItem={item.text}/>
+                    <ListItem listLabel={item.label} listItem={item.text} listId={item.id}/>
                 ))}
                 <NewListItem />
-                <GhostListItem />
             </ul>
         </div>
     )
