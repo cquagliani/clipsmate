@@ -8,7 +8,7 @@ import { UserAuth } from '../context/authContext'
 function List() {
     const [list, setList] = useState([]);
     const { user } = UserAuth();
-    const colRef = collection(db, 'users' + user.uid + 'list');
+    const colRef = collection(db, `users/${user.uid}/list`);
 
     // Read list items from database
     useEffect(() => {

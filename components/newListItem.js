@@ -7,7 +7,7 @@ function NewListItem() {
     const [itemLabel, setItemLabel] = useState('');
     const [itemText, setItemText] = useState('');
     const { user } = UserAuth();
-    const colRef = collection(db, 'users' + user.uid + 'list');
+    const colRef = collection(db, `users/${user.uid}/list`);
 
     const createListItem = async () => {
         if (itemLabel == '') {
