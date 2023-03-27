@@ -1,11 +1,16 @@
 import React from "react";
 import { useRouter } from 'next/router';
+import { UserAuth } from '../context/authContext'
 import { FormProvider, useForm } from "react-hook-form";
 import SignUpHeader from "@component/components/signupHeader";
+import { collection, doc, setDoc } from "firebase/firestore";
+import { db } from '../firebase/clientApp'
+
 
 const Signup = () => {
   const methods = useForm({ mode: "onBlur" });
   const router = useRouter();
+  const { signUp, user } = UserAuth();
 
   const {
     register,
@@ -15,17 +20,29 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-        await Signup(data.email, data.password);
+        await signUp(data.email, data.password)
         router.push("/dashboard");
       } catch (error) {
         console.log(error.message);
       }
   };
 
+  // await signUp(data.email, data.password)
+  // .then(async function (user) {
+  //   await setDoc(doc(db, 'users', `${user.uid}`), {
+  //     email: data.email,
+  //     password: data.password,
+  //     uid: user.uid,
+  //   });
+  // })
+  // .catch(function (error) {
+  //   console.log(error.message);
+  // })
+
   return (
     <div>
       <SignUpHeader />
-      <div class="flex flex-col justify-center items-center h-screen w-screen bg-blue-100 font-mono">
+      <div className="flex flex-col justify-center items-center h-screen w-screen bg-blue-100 font-mono">
         <div className="sign-up-form container mx-auto -mt-20 w-96 rounded-3xl border-2 border-gray-400 bg-white">
           <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">Sign Up</h2>
           <FormProvider {...methods}>
@@ -89,7 +106,7 @@ const Signup = () => {
         </div>
 
         <div className="mt-6">
-          <p className="font-light text-[14px] text-gray-600">Already have an account? <a class="font-bold" href="/login">Login</a></p>
+          <p className="font-light text-[14px] text-gray-600">Already have an account? <a className="font-bold" href="/login">Login</a></p>
         </div>
       </div>
     </div>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import ListItem from './listItem';
-import {  query, collection, onSnapshot, updateDoc, getDocs, doc, addDoc, deleteDoc, } from 'firebase/firestore';
+import {  collection, updateDoc, getDocs, deleteDoc, } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
 import NewListItem from './newListItem';
+import { UserAuth } from '../context/authContext'
 
 function List() {
     const [list, setList] = useState([]);
-    const colRef = collection(db, 'list');
+    const { user } = UserAuth();
+    const colRef = collection(db, `users/${user.uid}/list`);
 
     // Read list items from database
     useEffect(() => {

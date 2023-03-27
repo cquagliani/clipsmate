@@ -1,13 +1,14 @@
 import React from "react";
 import { useRouter } from 'next/router';
 import { FormProvider, useForm } from "react-hook-form";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/clientApp";
 import LoginHeader from '@component/components/loginHeader';
+import { UserAuth } from '../context/authContext'
 
 const Login = () => {
   const methods = useForm({ mode: "onBlur" });
   const router = useRouter();
+  const { login } = UserAuth();
 
   const {
     register,
@@ -15,13 +16,9 @@ const Login = () => {
     formState: { errors },
   } = methods;
 
-  const logIn = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
-  };
-
   const onSubmit = async (data) => {
     try {
-      await logIn(data.email, data.password);
+      await login(data.email, data.password);
       router.push("/dashboard");
     } catch (error) {
       console.log(error.message);
@@ -77,7 +74,7 @@ const Login = () => {
           </FormProvider>
         </div>
         <div className="mt-6">
-          <p className="font-light text-[14px] text-gray-600 ">Don't have an account? <a class="font-bold" href="/signup">Sign Up</a></p>
+          <p className="font-light text-[14px] text-gray-600 ">Don't have an account? <a className="font-bold" href="/signup">Sign Up</a></p>
         </div>
       </div>
     </div>
