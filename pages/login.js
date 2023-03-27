@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from 'next/router';
 import { FormProvider, useForm } from "react-hook-form";
 import { auth } from "../firebase/clientApp";
@@ -60,6 +61,7 @@ const Login = () => {
                   className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
                 />
                 {errors.password && <p className="text-red-400">{errors.password.message}</p>}
+                <Link href="/forgotpassword"><p className="text-[12px] text-right mt-2 font-bold">Forgot Password?</p></Link>
               </div>
 
               <div className="flex justify-center pt-8">
