@@ -1,21 +1,22 @@
 import Link from "next/link";
 import {signOut} from 'firebase/auth'
 import { useRouter } from 'next/router';
-import {auth} from '../firebase/clientApp';
+import { auth } from '../firebase/clientApp';
+import { UserAuth } from '../context/authContext'
 import React, { useState } from "react";
 
 function DashboardHeader() {
     const router = useRouter();
-    const [user, setUser] = useState(null);
+    const { user, logout } = UserAuth();
   
-    const logOut = async () => {
-      setUser({ email: null, uid: null });
-      await signOut(auth);
-    };
+    // const logOut = async () => {
+    //   setUser({ email: null, uid: null });
+    //   await signOut(auth);
+    // };
   
     const handleLogout = async () => {
       try {
-        await logOut();
+        await logout();
         router.push("/login");
       } catch (error) {
         console.log(error.message);
@@ -32,6 +33,7 @@ function DashboardHeader() {
             </div>
             <div className="flex items-center gap-8">
                 <button className="border border-gray-600 border-solid bg-blue-300 hover:bg-blue-200 rounded-3xl py-6 px-6 font-bold" onClick={handleLogout}>Logout</button>
+                <p>Signed in as: {user ? user.email : "You are not signed in."}</p>
             </div>
         </div>
 
