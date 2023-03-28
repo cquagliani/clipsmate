@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {  doc, deleteDoc, } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
+import { UserAuth } from '../context/authContext'
 
 function ListItem({listItem, listLabel, listId}) {
+    const { user } = UserAuth();
+
     const copyContent = async () => {
         try {
           await navigator.clipboard.writeText(listItem);
@@ -13,8 +16,13 @@ function ListItem({listItem, listLabel, listId}) {
     }
 
     const deleteItem = async (id) => {
-        const item = doc(db, "list", id);
-        await deleteDoc(item);
+        try {
+            const item = doc(db, `users/${user.uid}/list`, id);
+            await deleteDoc(item);
+            console.log(`Item deleted: ${id}`);
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     return (
