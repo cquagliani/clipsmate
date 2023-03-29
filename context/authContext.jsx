@@ -23,6 +23,7 @@ export const AuthContextProvider = ({ children }) => {
         setUser({
           email: user.email,
           uid: user.uid,
+          first: user.displayName,
         });
       } else {
         setUser({ email: null, uid: null });
