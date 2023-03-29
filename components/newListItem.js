@@ -27,7 +27,7 @@ function NewListItem() {
     }
 
     return (
-        <div>
+        <div className='mt-6'>
             {newItemToggle && (
                 <li className="list-none mb-4">
                     <div className="flex flex-row justify-between border-2 border-solid border-gray-600 gap-2 p-6 min-w-fit h-fit">
