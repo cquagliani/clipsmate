@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import ListItem from './listItem';
-import {  collection, updateDoc, getDocs, deleteDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
+import {  collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
 import NewListItem from './newListItem';
 import { UserAuth } from '../context/authContext'
+import AccordionComponent from './accordion';
 
 function List() {
     const [list, setList] = useState([]);
@@ -22,13 +22,13 @@ function List() {
     }, []);
 
     return (
-        <div className="flex items-center">
-            <ul id="itemsList" className="flex flex-col gap-4 border border-solid border-black rounded-3xl p-10 w-full h-full mt-12 bg-gray-100 bg-opacity-60 min-w-fit">
+        <div className="flex items-center mt-12 py-8 px-2">
+            <div id="itemsList" className="flex flex-col gap-2 w-full h-full min-w-fit">
                 {list.map((item) => (
-                    <ListItem listLabel={item.label} listItem={item.text} listId={item.id} key={item.id}/>
+                    <AccordionComponent listLabel={item.label} listItem={item.text} listId={item.id} key={item.id} />
                 ))}
                 <NewListItem />
-            </ul>
+            </div>
         </div>
     )
 }
