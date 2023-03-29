@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {  collection, addDoc, } from 'firebase/firestore';
+import {  collection, addDoc, serverTimestamp, } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
 import { UserAuth } from '../context/authContext'
 
@@ -15,7 +15,7 @@ function NewListItem() {
         } else if (itemText == '') {
             alert('Please enter a valid clip')
         } else {
-            await addDoc(colRef, { label: itemLabel, text: itemText });
+            await addDoc(colRef, { label: itemLabel, text: itemText, timestamp: serverTimestamp() });
             showNewItemComponent();
         }
     }
