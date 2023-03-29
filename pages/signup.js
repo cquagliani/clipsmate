@@ -3,8 +3,6 @@ import { useRouter } from 'next/router';
 import { UserAuth } from '../context/authContext'
 import { FormProvider, useForm } from "react-hook-form";
 import SignUpHeader from "@component/components/signupHeader";
-import { collection, doc, setDoc } from "firebase/firestore";
-import { db } from '../firebase/clientApp'
 
 
 const Signup = () => {
@@ -20,24 +18,12 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-        await signUp(data.email, data.password)
+        await signUp(data.email, data.password, data.first, data.last)
         router.push("/dashboard");
       } catch (error) {
         console.log(error.message);
       }
   };
-
-  // await signUp(data.email, data.password)
-  // .then(async function (user) {
-  //   await setDoc(doc(db, 'users', `${user.uid}`), {
-  //     email: data.email,
-  //     password: data.password,
-  //     uid: user.uid,
-  //   });
-  // })
-  // .catch(function (error) {
-  //   console.log(error.message);
-  // })
 
   return (
     <div>
@@ -47,6 +33,50 @@ const Signup = () => {
           <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">Sign Up</h2>
           <FormProvider {...methods}>
             <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
+
+              <div className="flex flex-row gap-4">
+                <div className="mt-8">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="" className="block mb-3 text-blue-900">
+                      First
+                    </label>
+                  </div>
+
+                  <input
+                    type="text"
+                    {...register("first", { required: "First name is required" })}
+                    className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
+                  />
+                  {errors.first && <p className="text-red-400">{errors.first.message}</p>}
+                </div>
+
+                <div className="mt-8">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="" className="block mb-3 text-blue-900">
+                      Last
+                    </label>
+                  </div>
+
+                  <input
+                    type="text"
+                    {...register("last", { required: "Last Name is required" })}
+                    className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
+                  />
+                  {errors.last && <p className="text-red-400">{errors.last.message}</p>}
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
               <div className="mt-8">
                 <div className="flex items-center justify-between">
                   <label htmlFor="" className="block mb-3 text-blue-900">

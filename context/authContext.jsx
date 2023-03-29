@@ -34,13 +34,14 @@ export const AuthContextProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const signUp = (email, password) => {
+  const signUp = async (email, password, first, last) => {
     return createUserWithEmailAndPassword(auth, email, password).then(cred => {
         const uid = cred.user.uid;
         const data = {
           id: cred.user.uid,
           email,
-          password,
+          firstName: first,
+          lastName: last,
         };
         async function addUserDB() {
           const newUser = doc(db, 'users', `${cred.user.uid}`);
