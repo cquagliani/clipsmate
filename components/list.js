@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ListItem from './listItem';
-import {  collection, updateDoc, getDocs, deleteDoc, onSnapshot, } from 'firebase/firestore';
+import {  collection, updateDoc, getDocs, deleteDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
 import NewListItem from './newListItem';
 import { UserAuth } from '../context/authContext'
@@ -9,11 +9,12 @@ function List() {
     const [list, setList] = useState([]);
     const { user } = UserAuth();
     const colRef = collection(db, `users/${user.uid}/list`);
+    const q = query(colRef, orderBy("timestamp"));
 
     // Read list items from database in real time
     useEffect(() => {
         const getList = async () => {
-            onSnapshot(colRef, (snapshot) => {
+            onSnapshot(q, (snapshot) => {
                 setList(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
             })
         }
