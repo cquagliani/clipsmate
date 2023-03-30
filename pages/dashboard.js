@@ -2,6 +2,7 @@ import DashboardHeader from "@component/components/dashboardHeader";
 import List from '@component/components/list'
 import ProtectedRoute from "../components/protectedRoute";
 import Grid from '@mui/material/Grid'
+import TaskList from "@component/components/taskList";
 
 const Dashboard = () => {
     return (
@@ -10,12 +11,12 @@ const Dashboard = () => {
                 <DashboardHeader />
                 <div className="h-screen w-screen px-[10%] py-24">
                 <h1 className="font-bold text-3xl align-left">Dashboard</h1>
-                    <Grid container spacing={4} direction="row" justifyContent="center">
-                        <Grid item xs={8}>
+                    <Grid container spacing={4} direction="row" justifyContent="between">
+                        <Grid item xs={7}>
                             <List title="My Clips" />
                         </Grid>
-                        <Grid item xs={4}>
-                            <List title="My Tasks"/>
+                        <Grid item xs={5}>
+                            <TaskList />
                         </Grid>
                     </Grid>
                     <Grid container spacing={4} direction="row" justifyContent="" alignItems="center">
