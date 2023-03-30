@@ -5,7 +5,7 @@ import NewListItem from './newListItem';
 import { UserAuth } from '../context/authContext'
 import AccordionComponent from './accordion';
 
-function List() {
+function List({title}) {
     const [list, setList] = useState([]);
     const { user } = UserAuth();
     const colRef = collection(db, `users/${user.uid}/list`);
@@ -22,7 +22,8 @@ function List() {
     }, []);
 
     return (
-        <div className="flex items-center mt-12 py-8 px-2 bg-slate-100 rounded-xl">
+        <div className="flex flex-col items-center mt-12 py-8 px-2 bg-slate-100 rounded-xl">
+            <h2 className="font-bold text-2xl mb-8">{title}</h2>
             <div id="itemsList" className="flex flex-col gap-2 w-full h-full min-w-fit">
                 {list.map((item) => (
                     <AccordionComponent listLabel={item.label} listItem={item.text} listId={item.id} key={item.id} />
