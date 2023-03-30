@@ -34,7 +34,7 @@ function AccordionComponent({listItem, listLabel, listId}) {
   return (
     <Accordion sx={{border: '1px solid'}}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{}}>
-            <Typography sx={{fontWeight: 700, fontSize: '1.50rem', lineHeight: '1.75rem'}}>{listLabel}</Typography>
+            <Typography sx={{fontWeight: 700, fontSize: '1rem', lineHeight: '1.75rem'}}>{listLabel}</Typography>
         </AccordionSummary>
         <AccordionDetails>
             <Typography>{listItem}</Typography>
