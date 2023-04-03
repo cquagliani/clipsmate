@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import HeaderComponent from '@component/components/header';
 
 const Home = () => {
     return (
-      <div className="bg-[#FCFCFC] pb-48 h-full">
+      <div className="bg-[#FCFCFC] h-full">
         <HeaderComponent />
 
         {/* HERO SECTION */}
@@ -74,9 +75,47 @@ const Home = () => {
               <h6 className="font-regular text-lg text-left">Schedule a Demo</h6>
               <div className="border border-black bg-[#0F3460] rounded-3xl h-[600px] w-[600px] mt-10"></div>
             </div>
-            <div className="border border-black  rounded-3xl h-[600px] w-[600px] -ml-24 mt-48">
-                <img className="object-cover w-full rotate-180" src={require('../public/images/girl-smiling.jpg') } />
+            <div className="border border-black  rounded-3xl bg-[#E94560] h-[600px] w-[600px] -ml-24 mt-48">
+                {/* <img className="object-cover w-full rotate-180" src={require('../public/images/girl-smiling.jpg') } /> */}
             </div>
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <section className="flex flex-col md:flex-row justify-center items-center md:items-start bg-[#0F3460] mt-48 py-16 px-8 lg:px-16 h-fit gap-8 md:gap-32 lg:gap-32">
+          <div className="">                
+            <h1 className="font-bold text-[#FCFCFC] text-[34px]"><a href="/">CLIPSMATE</a></h1>
+          </div>
+
+          <div className="flex flex-col text-[#FCFCFC] gap-4">
+            <Link href="">Product</Link>
+            <Link href="">Docs</Link>
+            <Link href="">Pricing</Link>
+          </div>
+
+          <div className="flex flex-col text-[#FCFCFC] gap-4">
+            <Link href="">Company</Link>
+            <Link href="">Careers</Link>
+            <Link href="">Resources</Link>
+          </div>
+
+          <div className="flex flex-col text-[#FCFCFC] gap-4">
+            <Link href="">Contact</Link>
+            <Link href="">Privacy Policy</Link>
+            <Link href="">Terms of Service</Link>
+          </div>
+
+          <div className="flex flex-row text-[#FCFCFC] gap-4">
+            <Link href="">TT</Link>
+            <Link href="">TW</Link>
+            <Link href="">LI</Link>
+            <Link href="">FB</Link>
+            <Link href="">INSTA</Link>
+            <Link href="">YT</Link>
+          </div>
+
+          <div>
+            <p className="font-light text-[#fcfcfc44] text-xs">ALL RIGHTS RESERVED © 2023 CLIPSMATE</p>
           </div>
         </section>
       
