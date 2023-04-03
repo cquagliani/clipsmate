@@ -17,15 +17,10 @@ function DashboardHeader() {
     };
 
     return (
-        <div className="flex justify-between items-center py-12 px-10 font-mono">
+        <div className="flex justify-between items-center p-8 font-mono">
             <h1 className="font-bold text-[34px]"><a href="/">CLIPSMATE</a></h1>
-            <div className="items-center gap-16 hidden px-8 md:flex">
-                <Link href="/">Home</Link>
-                <Link href="/features">Features</Link>
-                <Link href="/pricing">Pricing</Link>
-            </div>
             <div className="flex items-center gap-8">
-                <button className="border border-gray-600 border-solid bg-blue-300 hover:bg-blue-200 rounded-3xl py-6 px-6 font-bold" onClick={handleLogout}>Logout</button>
+                <button className="border border-gray-600 border-solid bg-blue-900 text-white hover:shadow-2xl rounded-2xl py-4 px-6 font-bold" onClick={handleLogout}>Logout</button>
                 <p>Signed in as: {user ? user.email : "You are not signed in."}</p>
             </div>
         </div>

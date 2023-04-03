@@ -27,10 +27,10 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="bg-slate-300 pb-32">
       <LoginHeader />
-      <div className="flex flex-col justify-center items-center h-screen w-screen bg-blue-100 font-mono">
-        <div className="sign-up-form container mx-auto -mt-20 w-96 rounded-3xl border-2 border-gray-400 bg-white">
+      <div className="flex flex-col justify-center items-center font-mono">
+        <div className="sign-up-form container mx-auto mt-32 w-96 rounded-3xl border-2 border-gray-400 bg-white">
           <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">Welcome back!</h2>
           <FormProvider {...methods}>
             <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>

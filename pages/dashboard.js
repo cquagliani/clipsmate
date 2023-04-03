@@ -7,9 +7,9 @@ import TaskList from "@component/components/taskList";
 const Dashboard = () => {
     return (
         <ProtectedRoute>
-            <div>
+            <div className="bg-slate-300 h-screen">
                 <DashboardHeader />
-                <div className="h-screen w-screen px-[10%] py-24">
+                <div className="px-[10%] py-24">
                 <h1 className="font-bold text-3xl align-left">Dashboard</h1>
                     <Grid container spacing={4} direction="row" justifyContent="between">
                         <Grid item xs={7}>
@@ -19,11 +19,11 @@ const Dashboard = () => {
                             <TaskList />
                         </Grid>
                     </Grid>
-                    <Grid container spacing={4} direction="row" justifyContent="" alignItems="center">
+                    {/* <Grid container spacing={4} direction="row" justifyContent="" alignItems="center">
                         <Grid item xs={12}>
                             <List title="Clipboard History"/>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
                 </div>
             </div>
         </ProtectedRoute>
