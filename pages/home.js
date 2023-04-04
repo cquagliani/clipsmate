@@ -75,14 +75,14 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center mt-48">
+        <section className="flex flex-col items-center justify-center mt-48 px-8">
           <div className="flex flex-row mt-10 lg:mt-16">
             <div className="flex flex-col z-10">
               <h2 className="font-bold text-5xl text-left">Start Your Best Work Today</h2>
-              <h6 className="font-regular text-lg text-left">Schedule a Demo</h6>
-              <div className="border border-black bg-[#0F3460] rounded-3xl h-[600px] w-[600px] mt-10"></div>
+              <h6 className="font-regular text-lg text-left mt-4">Schedule a Demo</h6>
+              <div className="border border-black bg-[#0F3460] rounded-3xl h-[600px] w-auto mt-10"></div>
             </div>
-            <div className="border border-black w-[600px] h-[725px] scale-x-[-1] rounded-3xl -ml-24 mt-48 overflow-hidden">
+            <div className="hidden md:block border border-black w-[600px] h-[auto] max-h-[725px] scale-x-[-1] rounded-3xl -ml-24 mt-48 overflow-hidden">
                 <Image className="" object-fit="cover" src={require('../public/images/girl-smiling.jpg') } />
             </div>
           </div>
