@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import SolidButton from "../components/solidButton";
+import { FormProvider, useForm } from "react-hook-form";
 import HeaderComponent from '@component/components/header';
+import girlSmiling from '../public/images/girl-smiling.jpg'
 import tt from '../public/socials/tt.svg'
 import twitter from '../public/socials/twitter.svg'
 import linkedin from '../public/socials/linkedin.svg'
@@ -10,6 +13,22 @@ import instagram from '../public/socials/instagram.svg'
 import youtube from '../public/socials/youtube.svg'
 
 const Home = () => {
+    const methods = useForm({ mode: "onBlur" });
+
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = methods;
+
+    const onSubmit = async (data) => {
+      try {
+
+        } catch (error) {
+          console.log(error.message);
+        }
+    };
+
     return (
       <div className="bg-[#FCFCFC] h-full">
         <HeaderComponent />
@@ -36,9 +55,7 @@ const Home = () => {
               <li><span class="italic"><img width="150px" height="auto" alt="Italic logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/italic_yqmmzg.svg" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/italic_yqmmzg.svg" data-lazyloaded="true" /></span></li>
               <li><span class="intercom"><img width="150px" height="auto" alt="Intercom logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/intercom_nmqamd.svg" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/intercom_nmqamd.svg" data-lazyloaded="true" /></span></li>
               <li><span class="frontify"><img width="150px" height="auto" alt="Frontify logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/frontify_vr3xme.svg" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/frontify_vr3xme.svg" data-lazyloaded="true" /></span></li>
-              <li><span class="parsely"><img width="150px" height="auto" alt="Parsely logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/parsely_bztaeo.svg" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/parsely_bztaeo.svg" data-lazyloaded="true" /></span></li>
               <li><span class="loom"><img width="150px" height="auto" alt="Loom logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/loom_aetyp2.svg" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/loom_aetyp2.svg" data-lazyloaded="true" /></span></li>
-              <li><span class="bridge"><img width="150px" height="auto" alt="Bridge logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/bridge_bmeqwo.svg" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/bridge_bmeqwo.svg" data-lazyloaded="true" /></span></li>
             </ul>
         </section>
 
@@ -75,15 +92,98 @@ const Home = () => {
           </div>
         </section>
 
+        {/* SCHEDULE A DEMO */}
         <section className="flex flex-col items-center justify-center mt-48 px-8">
           <div className="flex flex-row mt-10 lg:mt-16">
             <div className="flex flex-col z-10">
               <h2 className="font-bold text-5xl text-left">Start Your Best Work Today</h2>
               <h6 className="font-regular text-lg text-left mt-4">Schedule a Demo</h6>
-              <div className="border border-black bg-[#0F3460] rounded-3xl h-[600px] w-auto mt-10"></div>
+              <div className="border border-black bg-[#0F3460] rounded-3xl h-[600px] w-auto mt-10">
+              
+              
+              <FormProvider {...methods}>
+              <form action="" className=" w-full px-12" onSubmit={handleSubmit(onSubmit)}>
+                <div className="flex flex-row justify-center gap-4">
+                  <div className="mt-8">
+                    <div className="flex items-center justify-between">
+                      <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                        First
+                      </label>
+                    </div>
+                    <input
+                      type="text"
+                      {...register("first", { required: "First name is required" })}
+                      className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
+                    />
+                    {errors.first && <p className="text-red-400">{errors.first.message}</p>}
+                  </div>
+                  <div className="mt-8">
+                    <div className="flex items-center justify-between">
+                      <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                        Last
+                      </label>
+                    </div>
+                    <input
+                      type="text"
+                      {...register("last", { required: "Last Name is required" })}
+                      className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
+                    />
+                    {errors.last && <p className="text-red-400">{errors.last.message}</p>}
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                      Email
+                    </label>
+                  </div>
+
+                  <input
+                    type="email"
+                    {...register("email", { required: "Email is required" })}
+                    className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
+                  />
+                  {errors.email && <p className="text-red-400">{errors.email.message}</p>}
+                </div>
+                <div className="mt-8">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                      Phone
+                    </label>
+                  </div>
+
+                  <input
+                    type="tel"
+                    {...register("phone", { required: "Phone number is required" })}
+                    className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
+                  />
+                  {errors.phone && <p className="text-red-400">{errors.phone.message}</p>}
+                </div>
+                <div className="mt-8">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                      Company
+                    </label>
+                  </div>
+
+                  <input
+                    type="text"
+                    {...register("company", { required: "Company is required" })}
+                    className={`border border-solid rounded-lg ring:0 focus:ring-0 focus:outline-none border-gray-400 text-gray-500 text-normal py-3 h-12 px-6 text-lg w-full flex items-center`}
+                  />
+                  {errors.company && <p className="text-red-400">{errors.company.message}</p>}
+                </div>
+                <div className="flex justify-start pt-12">
+                  <SolidButton text={"Submit"} link={""} type="submit" />
+                </div>
+              </form>
+              </FormProvider>
+
+
+            </div>
             </div>
             <div className="hidden md:block border border-black w-[600px] h-[auto] max-h-[725px] scale-x-[-1] rounded-3xl -ml-24 mt-48 overflow-hidden">
-                <Image className="" object-fit="cover" src={require('../public/images/girl-smiling.jpg') } />
+                <Image className="" object-fit="cover" src={girlSmiling} />
             </div>
           </div>
         </section>
