@@ -1,12 +1,12 @@
-import Link from "next/link";
+import SolidButton from "../components/solidButton";
 
 function LoginHeader() {
     return (
         <div className="flex justify-between items-center p-8 font-mono">
             <h1 className="font-bold text-[34px]"><a href="/">CLIPSMATE</a></h1>
-            <div className="flex items-center gap-8">
+            <div className="items-center gap-8 hidden sm:flex">
                 <p className="text-[14px]">Don't have an account?</p>
-                <Link className="border border-gray-600 border-solid bg-blue-900 text-white rounded-2xl py-4 px-6 font-bold" href="/signup">Get Started</Link>
+                <SolidButton text={"Get Started"} link={"/signup"} />
             </div>
         </div>
 

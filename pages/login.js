@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-slate-300 pb-32">
+    <div className="bg-[#FCFCFC] pb-32 h-screen">
       <LoginHeader />
       <div className="flex flex-col justify-center items-center font-mono">
         <div className="sign-up-form container mx-auto mt-32 w-96 rounded-3xl border-2 border-gray-400 bg-white">
