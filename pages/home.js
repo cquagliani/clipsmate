@@ -119,7 +119,7 @@ const Home = () => {
             <div className="flex flex-col z-10">
               <h2 className="font-bold text-5xl text-left">Start Your Best Work Today</h2>
               <h6 className="font-regular text-lg text-left mt-4">Schedule a Demo</h6>
-              <div className="border border-black bg-[#0F3460] rounded-3xl h-[600px] w-auto mt-10">
+              <div className="bg-[#0F3460] shadow-lg rounded-3xl h-[600px] w-auto mt-10">
               
               
               <FormProvider {...methods}>
@@ -203,7 +203,7 @@ const Home = () => {
 
             </div>
             </div>
-            <div className="hidden md:block border border-black w-[600px] h-[auto] max-h-[725px] scale-x-[-1] rounded-3xl -ml-24 mt-48 overflow-hidden">
+            <div className="hidden md:block shadow-lg w-[600px] h-[auto] max-h-[725px] scale-x-[-1] rounded-3xl -ml-24 mt-48 overflow-hidden">
                 <Image className="" object-fit="cover" src={girlSmiling} />
             </div>
           </div>
