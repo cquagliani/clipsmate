@@ -4,7 +4,13 @@ import Link from "next/link";
 import SolidButton from "../components/solidButton";
 import { FormProvider, useForm } from "react-hook-form";
 import HeaderComponent from '@component/components/header';
+import Testimonial from "@component/components/testimonial";
 import girlSmiling from '../public/images/girl-smiling.jpg'
+import kiara from '../public/images/kiara.jpg'
+import john from '../public/images/john.jpg'
+import amanda from '../public/images/amanda.jpg'
+import emma from '../public/images/emma.jpg'
+import james from '../public/images/james.jpg'
 import tt from '../public/socials/tt.svg'
 import twitter from '../public/socials/twitter.svg'
 import linkedin from '../public/socials/linkedin.svg'
@@ -86,9 +92,24 @@ const Home = () => {
         <section className="flex flex-col items-center mt-48 px-8 lg:px-16">
           <h2 className="font-bold text-5xl text-center">What People Are Saying</h2>
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 mt-10 lg:mt-28">
-            <div className="border border-black bg-[#0F3460] rounded-3xl h-[300px] w-[400px]"></div>
-            <div className="border border-black bg-[#0F3460] rounded-3xl h-[300px] w-[400px]"></div>
-            <div className="border border-black bg-[#0F3460] rounded-3xl h-[300px] w-[400px]"></div>
+            <Testimonial 
+              img={emma}
+              name={"Emma C."}
+              title={"Customer Success Lead"}
+              text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"}
+            />
+            <Testimonial 
+              img={james}
+              name={"James S."}
+              title={"Software Engineer"}
+              text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"}
+            />
+            <Testimonial 
+              img={amanda}
+              name={"Amanda H."}
+              title={"Project Manager"}
+              text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"}
+            />
           </div>
         </section>
 
