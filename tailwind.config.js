@@ -15,6 +15,7 @@ module.exports = {
       blue: "#0F3460",
       pink: "#E94560",
       gray: "#EBEBEB",
+      error: "#DC2626"
     }
   },
   plugins: [],

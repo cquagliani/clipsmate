@@ -7,7 +7,7 @@ import TaskList from "@component/components/taskList";
 const Dashboard = () => {
     return (
         <ProtectedRoute>
-            <div className="bg-slate-300 h-screen">
+            <div className="bg-light h-screen">
                 <DashboardHeader />
                 <div className="px-[10%] py-24">
                 <h1 className="font-bold text-3xl align-left">Dashboard</h1>
