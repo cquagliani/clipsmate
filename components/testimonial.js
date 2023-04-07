@@ -5,7 +5,7 @@ import stars from '../public/stars.svg'
 
 function Testimonial({img, name, title, text}) {
   return (
-    <div className="flex flex-col items-center justify-start shadow-xl bg-[#EBEBEB] rounded-3xl h-[400px] w-[400px] p-8 mt-20 md:mt-12">
+    <div className="flex flex-col items-center justify-start shadow-xl bg-gray rounded-3xl h-[400px] w-[400px] p-8 mt-20 md:mt-12">
         <div className="rounded-full h-[100px] w-[100px] -mt-20 overflow-hidden shadow-lg relative">
             <Image className="" object-fit="cover"  src={img}/>
         </div>

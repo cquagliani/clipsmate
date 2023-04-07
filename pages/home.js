@@ -6,8 +6,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import HeaderComponent from '@component/components/header';
 import Testimonial from "@component/components/testimonial";
 import girlSmiling from '../public/images/girl-smiling.jpg'
-import kiara from '../public/images/kiara.jpg'
-import john from '../public/images/john.jpg'
 import amanda from '../public/images/amanda.jpg'
 import emma from '../public/images/emma.jpg'
 import james from '../public/images/james.jpg'
@@ -36,7 +34,7 @@ const Home = () => {
     };
 
     return (
-      <div className="bg-[#FCFCFC] h-full">
+      <div className="bg-light h-full">
         <HeaderComponent />
 
         {/* HERO SECTION */}
@@ -47,7 +45,7 @@ const Home = () => {
 
         {/* DEMO SECTION */}
         <section className="-mt-20 px-16">
-          <div className="border-4 border-black bg-[#0F3460] rounded-3xl h-[30rem] lg:h-[1000px]"></div>
+          <div className="border-4 border-black bg-blue rounded-3xl h-[30rem] lg:h-[1000px]"></div>
         </section>
 
         {/* BRAND LOGOS SECTION */}
@@ -74,12 +72,12 @@ const Home = () => {
               <p className="w-[25rem] mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
             </div>
             <div className="w-[50%]">
-              <div className="border border-black bg-[#0F3460] rounded-3xl h-[300px] w-[400px]"></div>
+              <div className="border border-black bg-blue rounded-3xl h-[300px] w-[400px]"></div>
             </div>
           </div>
           <div className="flex flex-col-reverse gap-8 lg:gap-48 lg:flex-row justify-center lg:items-center mt-12">
           <div className="w-[50%]">
-              <div className="border border-black bg-[#0F3460] rounded-3xl h-[300px] w-[400px]"></div>
+              <div className="border border-black bg-blue rounded-3xl h-[300px] w-[400px]"></div>
             </div>
             <div className="flex flex-col lg:items-start w-[50%]">
               <h3 className="font-bold text-4xl">Organize Tasks</h3>
@@ -119,7 +117,7 @@ const Home = () => {
             <div className="flex flex-col z-10">
               <h2 className="font-bold text-5xl text-left">Start Your Best Work Today</h2>
               <h6 className="font-regular text-lg text-left mt-4">Schedule a Demo</h6>
-              <div className="bg-[#0F3460] shadow-lg rounded-3xl h-[600px] w-auto mt-10">
+              <div className="bg-blue shadow-lg rounded-3xl h-[600px] w-auto mt-10">
               
               
               <FormProvider {...methods}>
@@ -127,7 +125,7 @@ const Home = () => {
                 <div className="flex flex-row justify-center gap-4">
                   <div className="mt-8">
                     <div className="flex items-center justify-between">
-                      <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                      <label htmlFor="" className="block mb-3 text-light">
                         First
                       </label>
                     </div>
@@ -140,7 +138,7 @@ const Home = () => {
                   </div>
                   <div className="mt-8">
                     <div className="flex items-center justify-between">
-                      <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                      <label htmlFor="" className="block mb-3 text-light">
                         Last
                       </label>
                     </div>
@@ -154,7 +152,7 @@ const Home = () => {
                 </div>
                 <div className="mt-8">
                   <div className="flex items-center justify-between">
-                    <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                    <label htmlFor="" className="block mb-3 text-light">
                       Email
                     </label>
                   </div>
@@ -168,7 +166,7 @@ const Home = () => {
                 </div>
                 <div className="mt-8">
                   <div className="flex items-center justify-between">
-                    <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                    <label htmlFor="" className="block mb-3 text-light">
                       Phone
                     </label>
                   </div>
@@ -182,7 +180,7 @@ const Home = () => {
                 </div>
                 <div className="mt-8">
                   <div className="flex items-center justify-between">
-                    <label htmlFor="" className="block mb-3 text-[#FCFCFC]">
+                    <label htmlFor="" className="block mb-3 text-light">
                       Company
                     </label>
                   </div>
@@ -211,30 +209,30 @@ const Home = () => {
 
         {/* FOOTER */}
         <section>
-          <div className="flex flex-col md:flex-row justify-center items-center md:items-start bg-[#0F3460] mt-48 py-16 px-8 lg:px-16 h-fit gap-4 md:gap-32 lg:gap-32">
+          <div className="flex flex-col md:flex-row justify-center items-center md:items-start bg-blue mt-48 py-16 px-8 lg:px-16 h-fit gap-4 md:gap-32 lg:gap-32">
             <div className="">                
-              <h1 className="font-bold text-[#FCFCFC] text-[34px]"><a href="/">CLIPSMATE</a></h1>
+              <h1 className="font-bold text-light text-[34px]"><a href="/">CLIPSMATE</a></h1>
             </div>
 
-            <div className="flex flex-col items-center md:items-start text-[#FCFCFC] gap-4">
+            <div className="flex flex-col items-center md:items-start text-light gap-4">
               <Link href="/">Product</Link>
               <Link href="/">Docs</Link>
               <Link href="/">Pricing</Link>
             </div>
 
-            <div className="flex flex-col items-center md:items-start text-[#FCFCFC] gap-4">
+            <div className="flex flex-col items-center md:items-start text-light gap-4">
               <Link href="/">Company</Link>
               <Link href="/">Careers</Link>
               <Link href="/">Resources</Link>
             </div>
 
-            <div className="flex flex-col items-center md:items-start text-[#FCFCFC] gap-4">
+            <div className="flex flex-col items-center md:items-start text-light gap-4">
               <Link href="/">Contact</Link>
               <Link href="/">Privacy Policy</Link>
               <Link href="/">Terms of Service</Link>
             </div>
 
-            <div className="flex flex-row text-[#FCFCFC] gap-4 mt-8 md:mt-0 shrink-0">
+            <div className="flex flex-row text-light gap-4 mt-8 md:mt-0 shrink-0">
               <Link href="https://www.tiktok.com/" target="_blank"><Image src={tt} alt="Tik Tok Logo" /></Link>
               <Link href="https://twitter.com/" target="_blank"><Image src={twitter} alt="Twitter Logo" /></Link>
               <Link href="https://www.linkedin.com/" target="_blank"><Image src={linkedin} alt="LinkedIn Logo" /></Link>
@@ -243,7 +241,7 @@ const Home = () => {
               <Link href="https://www.youtube.com/" target="_blank"><Image src={youtube} alt="youtube Logo" /></Link>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-center bg-[#0F3460] pb-8">
+          <div className="flex flex-row items-center justify-center bg-blue pb-8">
             <p className="font-light text-[#fcfcfc44] text-xs">ALL RIGHTS RESERVED © 2023 CLIPSMATE</p>
           </div>
 
