@@ -22,8 +22,8 @@ function TaskList() {
     }, []);
 
     return (
-        <div className="flex flex-col items-center mt-12 py-8 px-2 bg-slate-100 rounded-xl">
-            <h2 className="font-bold text-2xl mb-8">My Tasks</h2>
+        <div className="flex flex-col items-center mt-12 py-8 px-2 bg-gray rounded-xl shadow-xl">
+            <h2 className="font-bold text-blue text-2xl mb-8">My Tasks</h2>
             <div id="itemsList" className="flex flex-col gap-2 w-full h-full">
                 {tasks.map((item) => (
                     <Task task={item.task} description={item.description} taskId={item.id} key={item.id} />
