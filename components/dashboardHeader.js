@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SolidButton from "./solidButton";
 import { useRouter } from 'next/router';
 import { UserAuth } from '../context/authContext'
 import React, { useState } from "react";
@@ -20,8 +21,7 @@ function DashboardHeader() {
         <div className="flex justify-between items-center p-8 font-mono">
             <h1 className="font-bold text-[34px]"><a href="/">CLIPSMATE</a></h1>
             <div className="flex items-center gap-8">
-                <button className="border border-gray-600 border-solid bg-blue-900 text-white hover:shadow-2xl rounded-2xl py-4 px-6 font-bold" onClick={handleLogout}>Logout</button>
-                <p>Signed in as: {user ? user.email : "You are not signed in."}</p>
+              <button className="border-2 bg-pink border-pink rounded-2xl w-32 h-16 py-4 px-6 font-bold text-light" onClick={handleLogout}>Logout</button>          
             </div>
         </div>
     )
