@@ -13,17 +13,12 @@ const Dashboard = () => {
                 <h1 className="font-bold text-3xl align-left">Dashboard</h1>
                     <Grid container spacing={4} direction="row" justifyContent="between">
                         <Grid item xs={7}>
-                            <List title="My Clips" />
+                            <List />
                         </Grid>
                         <Grid item xs={5}>
                             <TaskList />
                         </Grid>
                     </Grid>
-                    {/* <Grid container spacing={4} direction="row" justifyContent="" alignItems="center">
-                        <Grid item xs={12}>
-                            <List title="Clipboard History"/>
-                        </Grid>
-                    </Grid> */}
                 </div>
             </div>
         </ProtectedRoute>
