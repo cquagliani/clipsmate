@@ -4,9 +4,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {  doc, deleteDoc, } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
 import { UserAuth } from '../context/authContext'
-
-function AccordionComponent({listItem, listLabel, listId}) {
+function AccordionComponent({listItem, listLabel, listId, expandAll}) {
     const { user } = UserAuth();
+    const [expandItem, setExpandItem] = useState(false);
+
+    const handleExpand = () => {
+        setExpandItem(!expandItem);
+    }
 
     const copyContent = async () => {
         try {
@@ -32,8 +36,8 @@ function AccordionComponent({listItem, listLabel, listId}) {
     }
 
   return (
-    <Accordion sx={{border: '1px solid'}}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{}}>
+    <Accordion sx={{border: '1px solid', marginTop: '0px'}} expanded={expandItem || expandAll} disableGutters={true}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />} onClick={handleExpand} sx={{}}>
             <Typography sx={{fontWeight: 700, fontSize: '1.125rem', lineHeight: '1.75rem', color:'#0F3460'}}>{listLabel}</Typography>
         </AccordionSummary>
         <AccordionDetails>
