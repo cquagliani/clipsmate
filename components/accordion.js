@@ -36,7 +36,7 @@ function AccordionComponent({listItem, listLabel, listId, expandAll}) {
     }
 
   return (
-    <Accordion sx={{border: '1px solid', marginTop: '0px'}} expanded={expandItem || expandAll} disableGutters={true}>
+    <Accordion sx={{border: '1px solid', marginTop: '0px'}} expanded={expandAll || expandItem} disableGutters={true}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} onClick={handleExpand} sx={{}}>
             <Typography sx={{fontWeight: 700, fontSize: '1.125rem', lineHeight: '1.75rem', color:'#0F3460'}}>{listLabel}</Typography>
         </AccordionSummary>
