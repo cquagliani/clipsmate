@@ -15,7 +15,7 @@ function List() {
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
     }
-    
+
     // Read list items from database in real time
     useEffect(() => {
         const getList = async () => {
@@ -28,7 +28,7 @@ function List() {
 
     return (
         <div className="flex flex-col items-center mt-12 py-8 px-2 bg-gray rounded-xl shadow-xl">
-            <h2 className="font-bold text-blue text-2xl mb-8">My Clips</h2>
+            <h2 className="font-bold text-blue text-2xl mb-2">My Clips</h2>
             <div className="flex flex-row justify-end mb-2 w-full">
                 {!isExpanded && (
                     <button className="flex items-center justify-center w-[95px] h-[30px] p-2 border border-solid border-blue rounded-lg bg-blue hover:shadow-2xl font-bold text-light text-sm" onClick={toggleExpand}>
