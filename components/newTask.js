@@ -38,9 +38,9 @@ function NewTask() {
                         <input className="font-bold text-xl bg-light px-2 w-full text-blue" name="task" value={task} placeholder="Task" onChange={(e) => {setTask(e.target.value)}} />     
                         <input className="bg-light px-2 w-full text-blue" name="description" value={description} placeholder="Description" onChange={(e) => {setDescription(e.target.value)}} />    
                     </div>
-                    <div className="flex flex-row justify-center items-center gap-4">
-                        <button className="w-[90px] h-[50px] p-2 border border-solid border-blue rounded-lg bg-light hover:shadow-2xl font-bold text-blue" onClick={clearFields}>Cancel</button>
-                        <button className="w-[90px] h-[50px] p-2 border border-solid border-pink rounded-lg bg-pink hover:shadow-2xl font-bold text-light" onClick={createTask}>Add task</button>
+                    <div className="flex flex-row justify-center items-center gap-2">
+                        <button className="flex items-center justify-center w-[85px] h-[38px] px-2 border border-solid border-blue rounded-lg bg-light hover:shadow-2xl font-bold text-sm text-blue" onClick={clearFields}>Cancel</button>
+                        <button className="flex items-center justify-center w-[85px] h-[38px] px-2 border border-solid border-pink rounded-lg bg-pink hover:shadow-2xl font-bold text-sm text-light" onClick={createTask}>Add task</button>
                     </div>
                 </div>
             </li>
