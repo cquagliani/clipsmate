@@ -47,7 +47,7 @@ function NewListItem() {
                 </li>
             )}
             {!newItemToggle && (
-                <div className="pl-2 mt-2 group">
+                <div className="pl-2 mt-1 group">
                     <button className="flex flex-row items-center justify-start mt-0 gap-4" onClick={showNewItemComponent}>
                         <div className="p-1 group-hover:bg-blue group-hover:rounded-full">
                             <svg
