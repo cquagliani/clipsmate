@@ -26,6 +26,11 @@ function NewTask() {
         setNewItemToggle(!newItemToggle);
     }
 
+    const clearFields = () => {
+        setTask("");
+        setDescription("");
+    }
+
     return (
         <div className='mt-1'>
             {newItemToggle && (
