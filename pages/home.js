@@ -6,7 +6,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import HeaderComponent from '@component/components/header';
 import Testimonial from "@component/components/testimonial";
 import girlSmiling from '../public/images/girl-smiling.jpg'
-import amanda from '../public/images/amanda.jpg'
+import kiara from '../public/images/kiara.jpg'
 import emma from '../public/images/emma.jpg'
 import james from '../public/images/james.jpg'
 import tt from '../public/socials/tt.svg'
@@ -103,8 +103,8 @@ const Home = () => {
               text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"}
             />
             <Testimonial 
-              img={amanda}
-              name={"Amanda H."}
+              img={kiara}
+              name={"Kiara H."}
               title={"Project Manager"}
               text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"}
             />
