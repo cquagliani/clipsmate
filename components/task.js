@@ -16,7 +16,7 @@ function Task({task, description, taskId}) {
 
     const deleteItem = async (taskId) => {
         try {
-            toggleModal();
+            setOpenModal(false);
             setTimeout(async () => {
                 const item = doc(db, `users/${user.uid}/tasks`, taskId);
                 await deleteDoc(item);

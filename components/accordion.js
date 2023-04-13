@@ -31,6 +31,7 @@ function AccordionComponent({listItem, listLabel, listId, expandAll}) {
 
     const deleteItem = async (id) => {
         try {
+            setOpenModal(false);
             const item = doc(db, `users/${user.uid}/list`, id);
             await deleteDoc(item);
             console.log(`Item deleted: ${id}`);
