@@ -8,7 +8,10 @@ function NewTask() {
     const { user } = UserAuth();
     const [task, setTask] = useState("");
     const [description, setDescription] = useState("");
+    const [newItemToggle, setNewItemToggle] = useState(false);
     const colRef = collection(db, `users/${user.uid}/tasks`);
+
+    const showNewItemComponent = () => setNewItemToggle(!newItemToggle);
 
     const createTask = async () => {
         if (task == '') {
@@ -18,12 +21,6 @@ function NewTask() {
             await addDoc(colRef, { task: task, description: description, timestamp: serverTimestamp() });
             showNewItemComponent();
         }
-    }
-
-    const [newItemToggle, setNewItemToggle] = useState(false);
-
-    const showNewItemComponent = () => {
-        setNewItemToggle(!newItemToggle);
     }
 
     const clearFields = () => {

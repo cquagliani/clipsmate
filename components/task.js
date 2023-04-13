@@ -10,7 +10,7 @@ function Task({task, description, taskId}) {
     const [openModal, setOpenModal] = useState(false);
     const toggleModal = () => setOpenModal(!openModal);
 
-    const style = {
+    const modalStyle = {
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -18,6 +18,7 @@ function Task({task, description, taskId}) {
         width: 400,
         bgcolor: 'background.paper',
         border: '1px solid #000',
+        borderRadius: '10px',
         boxShadow: 24,
         p: 4,
       };
@@ -52,7 +53,7 @@ function Task({task, description, taskId}) {
                 open={openModal}
                 onClose={toggleModal}
             >
-                <Box sx={style}>
+                <Box sx={modalStyle}>
                     <Typography sx={{ textAlign: 'center' }} variant="h5" component="h2">
                         Are you sure you want to delete this task?
                     </Typography>

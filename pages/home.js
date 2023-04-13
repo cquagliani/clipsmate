@@ -34,7 +34,7 @@ const Home = () => {
     };
 
     return (
-      <div className="bg-light h-full">
+      <div className="bg-light h-full relative">
         <HeaderComponent />
 
         {/* HERO SECTION */}
