@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Checkbox from '@mui/material/Checkbox';
 import {  doc, deleteDoc, } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
-import { UserAuth } from '../context/authContext'
+import { UserAuth } from '../context/authContext';
+import ConfirmationModal from './confirmationModal';
 
 function Task({task, description, taskId}) {
     const { user } = UserAuth();
+    const [openModal, setOpenModal] = useState(false);
+    const toggleModal = () => setOpenModal(!openModal);
 
     const editContent = () => {
 
@@ -13,10 +16,11 @@ function Task({task, description, taskId}) {
 
     const deleteItem = async (taskId) => {
         try {
+            setOpenModal(false);
             setTimeout(async () => {
                 const item = doc(db, `users/${user.uid}/tasks`, taskId);
                 await deleteDoc(item);
-            }, 3000);
+            }, 1000);
             console.log(`Task deleted: ${taskId}`);
         } catch (error) {
             console.log(error.message);
@@ -31,7 +35,8 @@ function Task({task, description, taskId}) {
         </div>
         <div className="flex flex-row justify-between items-center pl-10">
             <p className="font-light text-blue text-sm">{description}</p>
-            <button className="bg-transparent p-1 border-2 border-solid rounded-md border-error text-blue text-sm font-bold hover:shadow-lg hover:text-error" onClick={() => deleteItem(taskId)}>Delete</button>
+            <button className="bg-transparent p-1 border-2 border-solid rounded-md border-error text-blue text-sm font-bold hover:shadow-lg hover:text-error" onClick={toggleModal}>Delete</button>
+            <ConfirmationModal title={"Are you sure you want to delete this task?"} subtitle={"This action cannot be undone."} openModal={openModal} toggleModal={toggleModal} deleteAction={() => deleteItem(taskId)} />
         </div>
     </div>
   )

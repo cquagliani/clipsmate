@@ -12,9 +12,7 @@ function List() {
     const q = query(colRef, orderBy("timestamp"));
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const toggleExpand = () => {
-        setIsExpanded(!isExpanded);
-    }
+    const toggleExpand = () => setIsExpanded(!isExpanded);
 
     // Read list items from database in real time
     useEffect(() => {
