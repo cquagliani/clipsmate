@@ -33,7 +33,7 @@ const Signup = () => {
         <div className="container mx-auto mt-32 w-96 rounded-xl bg-blue shadow-xl">
           <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-light">Sign Up</h2>
           <FormProvider {...methods}>
-            <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
+            <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)} netlify>
 
               <div className="flex flex-row gap-4">
                 <div className="mt-8">

@@ -6,7 +6,7 @@ import { auth } from "../firebase/clientApp";
 import LoginHeader from '@component/components/loginHeader';
 import { sendPasswordResetEmail } from "firebase/auth";
 
-const forgotpassword = () => {
+const ForgotPassword = () => {
   const methods = useForm({ mode: "onBlur" });
   const router = useRouter();
   const [sent, setSent] = useState(false);
@@ -36,7 +36,7 @@ const forgotpassword = () => {
           
           {!sent && (
             <FormProvider {...methods}>
-                <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
+                <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)} netlify>
                 <div className="mt-8">
                     <div className="flex items-center justify-between">
                     <label htmlFor="" className="block mb-3 text-blue-900">
@@ -73,4 +73,4 @@ const forgotpassword = () => {
   );
 };
 
-export default forgotpassword;
+export default ForgotPassword;
