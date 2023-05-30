@@ -202,7 +202,7 @@ const Home = () => {
             </div>
             </div>
             <div className="hidden md:block shadow-lg w-[600px] h-[auto] max-h-[725px] scale-x-[-1] rounded-3xl -ml-24 mt-48 overflow-hidden">
-                <Image className="" object-fit="cover" src={girlSmiling} />
+                <Image className="" object-fit="cover" alt="girl smiling at laptop" src={girlSmiling} />
             </div>
           </div>
         </section>
