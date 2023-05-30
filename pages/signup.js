@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { useRouter } from 'next/router';
 import { UserAuth } from '../context/authContext'
 import { FormProvider, useForm } from "react-hook-form";
@@ -124,7 +125,7 @@ const Signup = () => {
         </div>
 
         <div className="mt-6">
-          <p className="font-light text-[14px] text-gray-600">Already have an account? <a className="font-bold" href="/login">Login</a></p>
+          <p className="font-light text-[14px] text-gray-600">Already have an account? <Link className="font-bold" href="/login">Login</Link></p>
         </div>
       </div>
     </div>

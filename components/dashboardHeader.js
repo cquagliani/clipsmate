@@ -19,7 +19,7 @@ function DashboardHeader() {
 
     return (
         <div className="flex justify-between items-center p-8 font-mono">
-            <h1 className="font-bold text-[34px]"><a href="/">CLIPSMATE</a></h1>
+            <h1 className="font-bold text-[34px]"><Link href="/">CLIPSMATE</Link></h1>
             <div className="flex items-center gap-8">
               <button className="border-2 bg-pink border-pink rounded-2xl w-32 h-16 py-4 px-6 font-bold text-light" onClick={handleLogout}>Logout</button>          
             </div>

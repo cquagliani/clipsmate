@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import { useRouter } from 'next/router';
 import { FormProvider, useForm } from "react-hook-form";
 import { auth } from "../firebase/clientApp";
@@ -65,7 +66,7 @@ const forgotpassword = () => {
             )}
         </div>
         <div className="mt-6">
-          <p className="font-light text-[14px] text-gray-600 ">Don't have an account? <a className="font-bold" href="/signup">Sign Up</a></p>
+          <p className="font-light text-[14px] text-gray-600 ">Don't have an account? <Link className="font-bold" href="/signup">Sign Up</Link></p>
         </div>
       </div>
     </div>
