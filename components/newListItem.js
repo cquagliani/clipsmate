@@ -40,7 +40,7 @@ function NewListItem() {
                             <Divider />
                             <div className="flex flex-row items-center justify-end gap-2 w-full py-2">
                                 <button className="w-[85px] h-[38px] px-2 border border-solid border-blue rounded-lg bg-light hover:shadow-2xl font-bold text-sm text-blue" onClick={showNewItemComponent}>Cancel</button>
-                                <button className="w-[85px] h-[38px] px-2 border border-solid border-pink rounded-lg bg-pink hover:shadow-2xl font-bold text-sm text-light" onClick={createListItem}>Add task</button>
+                                <button className="w-[85px] h-[38px] px-2 border border-solid border-pink rounded-lg bg-pink hover:shadow-2xl font-bold text-sm text-light" onClick={createListItem}>Add clip</button>
                             </div>
                         </div>
                     </div>

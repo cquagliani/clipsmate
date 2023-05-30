@@ -44,12 +44,12 @@ const Home = () => {
         </section>
 
         {/* DEMO SECTION */}
-        <section className="-mt-20 px-16">
+        <section className="md:-mt-20 mt-10 px-16">
           <div className="border-4 border-black bg-blue rounded-3xl h-[30rem] lg:h-[1000px]"></div>
         </section>
 
         {/* BRAND LOGOS SECTION */}
-        <section className="flex flex-col gap-10 justify-center items-center mt-48 px-4">
+        <section className="flex flex-col gap-10 justify-center items-center md:mt-48  mt-24 px-4">
             <h3 className="font-bold text-xl text-center">Trusted By Over 3000+ Teams</h3>
             <ul className="flex flex-row items-center justify-center gap-4 sm:gap-6 mt-8 flex-wrap">
               <li><span class="unsplash"><img width="150px" height="auto" alt="Unsplash logo" data-src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/unsplash_wotp32.svg" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/unsplash_wotp32.svg" data-lazyloaded="true" /></span></li>
@@ -64,7 +64,7 @@ const Home = () => {
         </section>
 
       {/* AMAZING FEATURES SECTION */}
-        <section className="flex flex-col items-center mt-48 px-8 lg:px-16">
+        <section className="flex flex-col items-center md:mt-48 mt-24 px-8 lg:px-16">
           <h2 className="font-bold text-5xl text-center">Amazing Features</h2>
           <div className="flex flex-col gap-8 lg:gap-48 lg:flex-row justify-center lg:items-center mt-10 lg:mt-28">
             <div className="flex flex-col lg:items-start w-[50%]">
@@ -87,7 +87,7 @@ const Home = () => {
         </section>
 
         {/* TESTIMONIALS SECTION  */}
-        <section className="flex flex-col items-center mt-48 px-8 lg:px-16">
+        <section className="flex flex-col items-center md:mt-48 mt-24 px-8 lg:px-16">
           <h2 className="font-bold text-5xl text-center">What People Are Saying</h2>
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-16 mt-10 lg:mt-28">
             <Testimonial 
@@ -112,7 +112,7 @@ const Home = () => {
         </section>
 
         {/* SCHEDULE A DEMO */}
-        <section className="flex flex-col items-center justify-center mt-48 px-8">
+        <section className="flex flex-col items-center justify-center md:mt-48  mt-24 px-8">
           <div className="flex flex-row mt-10 lg:mt-16">
             <div className="flex flex-col z-10">
               <h2 className="font-bold text-5xl text-left">Start Your Best Work Today</h2>
