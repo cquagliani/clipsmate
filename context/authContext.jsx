@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  setPersistence,
 } from "firebase/auth";
 import { auth } from "../firebase/clientApp";
 
@@ -53,7 +54,15 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    setPersistence(auth, 'session')
+      .then(() => {
+        return signInWithEmailAndPassword(auth, email, password);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
   };
 
   const logout = () => {
