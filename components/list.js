@@ -22,7 +22,7 @@ function List() {
             })
         }
         getList();
-    }, []);
+    }, [q]);
 
     return (
         <div className="flex flex-col items-center mt-12 py-8 px-2 bg-gray rounded-xl shadow-xl">

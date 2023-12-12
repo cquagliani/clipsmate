@@ -7,7 +7,7 @@ function Testimonial({img, name, title, text}) {
   return (
     <div className="flex flex-col items-center justify-start shadow-xl bg-gray rounded-3xl h-[400px] w-[400px] p-8 mt-20 md:mt-12">
         <div className="rounded-full h-[100px] w-[100px] -mt-20 overflow-hidden shadow-lg relative">
-            <Image className="" object-fit="cover"  src={img}/>
+            <Image className="" alt="" object-fit="cover"  src={img}/>
         </div>
         <div className="flex flex-col items-center gap-4 my-10">
             <h3 className="font-bold text-2xl">{name}</h3>
@@ -18,7 +18,7 @@ function Testimonial({img, name, title, text}) {
             <Image className="mt-4" src={stars} alt="stars rating" />
         </div>
         <div className="mt-8">
-            <p className="font-normal italic text-center text-lg">"{text}"</p>
+            <p className="font-normal italic text-center text-lg">{`"${text}"`}</p>
         </div>
     </div>
   )
