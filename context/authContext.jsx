@@ -1,21 +1,14 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { collection, doc, addDoc, setDoc } from 'firebase/firestore';
-import { db } from "../firebase/clientApp";
-import {
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  setPersistence,
-} from "firebase/auth";
-import { auth } from "../firebase/clientApp";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from "../firebase/clientApp";
 
 const AuthContext = createContext({});
 
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ email: null, uid: null });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,7 +22,6 @@ export const AuthContextProvider = ({ children }) => {
       } else {
         setUser({ email: null, uid: null });
       }
-      console.log(user)
       setLoading(false);
     });
 
@@ -37,37 +29,50 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   const signUp = async (email, password, first, last) => {
-    return createUserWithEmailAndPassword(auth, email, password).then(cred => {
-        const uid = cred.user.uid;
-        const data = {
-          id: cred.user.uid,
-          email,
-          firstName: first,
-          lastName: last,
-        };
-        async function addUserDB() {
-          const newUser = doc(db, 'users', `${cred.user.uid}`);
-          await setDoc(newUser, data);
-        }
-        addUserDB();
-    });
-  };
+    try {
+      const cred = await createUserWithEmailAndPassword(auth, email, password);
+      const uid = cred.user.uid;
+      const data = {
+        id: uid,
+        email,
+        firstName: first,
+        lastName: last,
+      };
 
-  const login = (email, password) => {
-    setPersistence(auth, 'session')
-      .then(() => {
-        return signInWithEmailAndPassword(auth, email, password);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      const newUser = doc(db, 'users', uid);
+      await setDoc(newUser, data);
+
+      // Optionally, handle user object update here as well
+      setUser({
+        email: cred.user.email,
+        uid: cred.user.uid,
+        first: cred.user.displayName,
       });
+
+    } catch (error) {
+      // Handle or throw the error
+      console.error("Error signing up: ", error);
+      throw error;
+    }
   };
 
-  const logout = () => {
-    return signOut(auth);
-  }
+  const login = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      console.error("Error logging in: ", error);
+      throw error;
+    }
+  };
+
+  const logout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error signing out: ", error);
+      throw error;
+    }
+  };
 
   const value = {
     user,
@@ -78,12 +83,9 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={value}>
-      {loading ? null : children}
+      {loading ? <div>Loading...</div> : children}
     </AuthContext.Provider>
   );
 };
 
-
-export const UserAuth = () => {
-  return useContext(AuthContext);
-}
+export const UserAuth = useAuth;

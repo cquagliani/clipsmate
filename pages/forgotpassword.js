@@ -66,7 +66,7 @@ const ForgotPassword = () => {
             )}
         </div>
         <div className="mt-6">
-          <p className="font-light text-[14px] text-gray-600 ">Don't have an account? <Link className="font-bold" href="/signup">Sign Up</Link></p>
+          <p className="font-light text-[14px] text-gray-600 ">{"Don't have an account? "}<Link className="font-bold" href="/signup">Sign Up</Link></p>
         </div>
       </div>
     </div>
