@@ -52,14 +52,13 @@ const Home = () => {
         <section className="flex flex-col gap-10 justify-center items-center md:mt-48  mt-24 px-4">
             <h3 className="font-bold text-xl text-center">Trusted By Over 3000+ Teams</h3>
             <ul className="flex flex-row items-center justify-center gap-4 sm:gap-6 mt-8 flex-wrap">
-              <li><span className="unsplash"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Unsplash logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/unsplash_wotp32.svg" data-lazyloaded="true" /></span></li>
-              <li><span className="superhuman"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Superhuman logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/superhuman_isiyzy.svg" data-lazyloaded="true" /></span></li>
-              <li><span className="maze"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Maze logo" src="https://res.cloudinary.com/pitch-software/image/upload/v1644231024/website-images/partners/Maze_logo_tiiyui.svg" data-lazyloaded="true" /></span></li>
-              <li><span className="notion"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Notion logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/notion-wordmark_ofv6ws.svg" data-lazyloaded="true" /></span></li>
-              <li><span className="italic"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Italic logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/italic_yqmmzg.svg" data-lazyloaded="true" /></span></li>
-              <li><span className="intercom"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Intercom logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/intercom_nmqamd.svg" data-lazyloaded="true" /></span></li>
-              <li><span className="frontify"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Frontify logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/frontify_vr3xme.svg" data-lazyloaded="true" /></span></li>
-              <li><span className="loom"><Image width={0} height={0} style={{ width: '150px', height: 'auto' }} alt="Loom logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/loom_aetyp2.svg" data-lazyloaded="true" /></span></li>
+              <li><span className="superhuman"><Image width={150} height={150} alt="Superhuman logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/superhuman_isiyzy.svg" data-lazyloaded="true" /></span></li>
+              <li><span className="maze"><Image width={150} height={150} alt="Maze logo" src="https://res.cloudinary.com/pitch-software/image/upload/v1644231024/website-images/partners/Maze_logo_tiiyui.svg" data-lazyloaded="true" /></span></li>
+              <li><span className="notion"><Image width={150} height={150} alt="Notion logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/notion-wordmark_ofv6ws.svg" data-lazyloaded="true" /></span></li>
+              <li><span className="italic"><Image width={150} height={150} alt="Italic logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/italic_yqmmzg.svg" data-lazyloaded="true" /></span></li>
+              <li><span className="intercom"><Image width={150} height={150} alt="Intercom logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-images/partners/intercom_nmqamd.svg" data-lazyloaded="true" /></span></li>
+              <li><span className="frontify"><Image width={150} height={150} alt="Frontify logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/frontify_vr3xme.svg" data-lazyloaded="true" /></span></li>
+              <li><span className="loom"><Image width={150} height={150} alt="Loom logo" src="https://res.cloudinary.com/pitch-software/image/upload/website-assets/team-logos/loom_aetyp2.svg" data-lazyloaded="true" /></span></li>
             </ul>
         </section>
 
