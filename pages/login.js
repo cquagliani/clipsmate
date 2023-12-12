@@ -33,7 +33,7 @@ const Login = () => {
         <div className="container mx-auto mt-32 w-96 rounded-xl bg-blue shadow-xl">
           <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-light">Welcome back!</h2>
           <FormProvider {...methods}>
-            <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)} netlify>
+            <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="mt-8">
                 <div className="flex items-center justify-between">
                   <label htmlFor="" className="block mb-2 text-light">

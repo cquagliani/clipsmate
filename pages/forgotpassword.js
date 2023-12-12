@@ -36,7 +36,7 @@ const ForgotPassword = () => {
           
           {!sent && (
             <FormProvider {...methods}>
-                <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)} netlify>
+                <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="mt-8">
                     <div className="flex items-center justify-between">
                     <label htmlFor="" className="block mb-3 text-blue-900">
