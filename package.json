@@ -1,7 +1,6 @@
 {
   "name": "clipsmate",
   "version": "0.1.0",
-  "homepage": "https://cquagliani.github.io/clipsmate/",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -28,7 +27,6 @@
   "devDependencies": {
     "@types/react-is": "^18.2.4",
     "autoprefixer": "^10.4.14",
-    "gh-pages": "^6.1.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
   }
