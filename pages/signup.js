@@ -36,12 +36,46 @@ const Signup = () => {
           <FormProvider {...methods}>
             <form action="" className="w-80 mx-auto pb-12 px-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-row gap-4">
-                <FormField label="First" name="first" error={errors.first} register={register} required />
-                <FormField label="Last" name="last" error={errors.last} register={register} required />
+                <FormField 
+                  label="First" 
+                  name="first" 
+                  error={errors.first} 
+                  register={register} 
+                  required 
+                />
+                <FormField 
+                  label="Last" 
+                  name="last" 
+                  error={errors.last} 
+                  register={register} 
+                  required 
+                />
               </div>
-              <FormField type="email" label="Email" name="email" error={errors.email} register={register} required />
-              <FormField type="password" label="Password" name="password" error={errors.password} register={register} required />
-              <FormField type="password" label="Confirm Password" name="password_confirm" error={errors.password_confirm} register={register} required />
+
+              <FormField 
+                type="email" 
+                label="Email" 
+                name="email" 
+                error={errors.email} 
+                register={register} 
+                required 
+              />
+              <FormField 
+                type="password" 
+                label="Password" 
+                name="password" 
+                error={errors.password} 
+                register={register} 
+                required 
+              />
+              <FormField 
+                type="password" 
+                label="Confirm Password" 
+                name="password_confirm" 
+                error={errors.password_confirm} 
+                register={register} 
+                required 
+              />
               
               <div className="flex justify-center pt-8">
                 <button
