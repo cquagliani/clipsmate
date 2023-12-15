@@ -42,7 +42,6 @@ export const AuthContextProvider = ({ children }) => {
       const newUser = doc(db, 'users', uid);
       await setDoc(newUser, data);
 
-      // Optionally, handle user object update here as well
       setUser({
         email: cred.user.email,
         uid: cred.user.uid,
@@ -50,7 +49,6 @@ export const AuthContextProvider = ({ children }) => {
       });
 
     } catch (error) {
-      // Handle or throw the error
       console.error("Error signing up: ", error);
       throw error;
     }
