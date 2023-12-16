@@ -104,9 +104,11 @@ function AccordionComponent({ listItem, listLabel, listId, expandAll }) {
                 ) : (
                     <div>
                         <Typography className="font-light text-blue text-sm">{listItem}</Typography>
-                        <div className="flex flex-row justify-end items-center gap-4">
-                            <button className="bg-transparent p-2 border-none" onClick={copyContent}><HiClipboard className="text-black text-xl" /></button>
-                            <button className="bg-transparent p-1 text-blue" onClick={handleEdit}><HiPencilAlt className="text-black text-xl" /></button>
+                        <div className="flex flex-row justify-end items-center gap-8">
+                            <div className="flex flex-row justify-end items-center gap-1">
+                                <button className="bg-transparent p-2 border-none" onClick={copyContent}><HiClipboard className="text-black text-xl" /></button>
+                                <button className="bg-transparent p-1 text-blue" onClick={handleEdit}><HiPencilAlt className="text-black text-xl" /></button>
+                            </div>
                             <button className="bg-transparent p-1 border-2 border-solid rounded-md border-error text-blue text-sm font-bold hover:shadow-lg hover:text-error" onClick={toggleModal}>Delete</button>
                             <ConfirmationModal title={"Are you sure you want to delete this clip?"} subtitle={"This action cannot be undone."} openModal={openModal} toggleModal={toggleModal} deleteAction={() => deleteItem(listId)} />
                         </div>
