@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import Link from 'next/link';
-import Image from 'next/image';
 import Checkbox from '@mui/material/Checkbox';
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
