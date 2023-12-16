@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import Link from 'next/link';
+import Image from 'next/image';
 import Checkbox from '@mui/material/Checkbox';
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore';
 import { db } from "../firebase/clientApp";
 import { UserAuth } from '../context/authContext';
 import ConfirmationModal from './confirmationModal';
+import { HiPencilAlt } from "react-icons/hi";
 
 function Task({ task, description, taskId }) {
     const { user } = UserAuth();
@@ -58,8 +61,16 @@ function Task({ task, description, taskId }) {
         <div className="flex flex-col border border-solid border-blue bg-light px-2 py-2 w-full">
             {isEditMode ? (
                 <div className="flex flex-col">
-                    <input value={editedTask} onChange={handleTaskChange} className="font-bold text-blue text-lg border p-1" />
-                    <textarea value={editedDescription} onChange={handleDescriptionChange} className="font-light text-blue text-sm border p-1"  />
+                    <input
+                        value={editedTask}
+                        onChange={handleTaskChange}
+                        className="font-bold text-blue bg-transparent text-lg p-1 no-border" 
+                    />
+                    <textarea
+                        value={editedDescription}
+                        onChange={handleDescriptionChange}
+                        className="font-light text-blue bg-transparent text-sm p-1 no-border resize-none"
+                    />
                     <div className="flex flex-row items-center justify-end gap-2 w-full py-2">
                         <button className="flex items-center justify-center w-[85px] h-[38px] px-2 border border-solid border-blue rounded-lg bg-light hover:shadow-2xl font-bold text-sm text-blue" onClick={handleCancel}>Cancel</button>
                         <button className="flex items-center justify-center w-[85px] h-[38px] px-2 border border-solid border-pink rounded-lg bg-pink hover:shadow-2xl font-bold text-sm text-light" onClick={handleSave}>Save</button>
@@ -71,7 +82,8 @@ function Task({ task, description, taskId }) {
                         <Checkbox sx={{ color: '#0F3460' }} size="medium" onChange={() => deleteItem(taskId)}></Checkbox>
                         <div className="flex flex-row items-center justify-between gap-2 w-full py-2">
                             <h2 className="font-bold text-blue text-lg">{task}</h2>
-                            <button className="flex items-center justify-center  p-1 border border-solid border-pink rounded-lg bg-pink hover:shadow-2xl font-bold text-sm text-light"  onClick={handleEdit}>Edit</button>
+                            {/* <Link href="" target="_blank"><Image src={editIcon} alt="youtube Logo" /></Link> */}
+                            <button className="flex items-center justify-center  p-1 rounded-lg hover:shadow-2xl font-bold text-sm text-light"  onClick={handleEdit}><HiPencilAlt className="text-black text-xl" /></button>
                         </div>
                     </div>
                     <div className="flex flex-row justify-between items-center pl-10">
