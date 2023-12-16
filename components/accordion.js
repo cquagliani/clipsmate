@@ -97,8 +97,8 @@ function AccordionComponent({ listItem, listLabel, listId, expandAll }) {
                             className="font-light text-blue text-md p-1 w-full resize-none"
                         />
                         <div className="flex flex-row justify-end items-center gap-4">
-                            <button className="bg-transparent p-1 text-blue" onClick={handleCancel}>Cancel</button>
-                            <button className="bg-transparent p-1 text-blue" onClick={handleSave}>Save</button>
+                            <button className="flex items-center justify-center w-[85px] h-[38px] px-2 border border-solid border-blue rounded-lg bg-light hover:shadow-2xl font-bold text-sm text-blue" onClick={handleCancel}>Cancel</button>
+                            <button className="flex items-center justify-center w-[85px] h-[38px] px-2 border border-solid border-pink rounded-lg bg-pink hover:shadow-2xl font-bold text-sm text-light" onClick={handleSave}>Save</button>
                         </div>
                     </div>
                 ) : (
